@@ -1,0 +1,22 @@
+<div class="col-md-4 p-2 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h3>New note</h3>
+    </div>
+    <div class="card-body">
+      <form action="/notes/new-note" method="POST">
+        <div class="form-label">
+          <input type="text" name="title" class="form-control" placeholder="Title" autofocus>
+        </div>
+        <div class="form-label">
+          <textarea name="description" class="form-control" placeholder="Description"></textarea>
+        </div>
+        <div class="form-label d-grid">
+          <button class="btn btn-primary btn-block" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

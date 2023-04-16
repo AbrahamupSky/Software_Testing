@@ -1,0 +1,35 @@
+<div class="row p-3">
+  {{#each notes}}
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{ title }} <a href="notes/edit/{{_id}}"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+              <path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path>
+              <path
+                d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z">
+              </path>
+            </svg></a>
+        </h4>
+        <p class="d-grid gap-2">{{ description }}</p>
+          <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST" class="d-grid">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-danger btn-block" type="submit">
+              Delete
+            </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {{else}}
+  <div class="card mx-auto" style="width: 400px">
+    <div class="card-body">
+      <p class="lead">There are not notes yet</p>
+      <a href="/notes/add" class="d-grid gap-2 btn btn-success">Create One</a>
+    </div>
+  </div>
+
+  {{/each}}
+</div>
