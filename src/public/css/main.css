@@ -1,5 +1,7 @@
 body {
-  background-image: url('../img/2.jpeg'); /* fallback for old browsers */
+  background-image: url("../img/2.jpeg"); /* fallback for old browsers */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .logo {
